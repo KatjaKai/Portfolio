@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+ 
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+			<link rel="stylesheet" type="text/css" href="ColorStyles.css">
+			
+<script>
+<!-- Drag & drop -->
+function drop(event)
+{
+event.preventDefault();
+var data=event.dataTransfer.getData("text");
+event.target.appendChild(document.getElementById(data));
+}
+function permitdrop(event)
+{
+event.preventDefault();
+}
+function drag(event)
+{
+event.dataTransfer.setData("text", event.target.id);
+}
+
+</script>
+
+  </head>
+  
+ <body> 
+ <style>
+ body
+ {
+ background-image: url("bg_clouds.jpeg")
+ }
+ </style>
+ <header>
+<!-- introduction-->
+<h1>Mockup Portfolio</h1>
+<h2>Katja Kaikkonen & Konsta Kantoluoto</h2>
+
+
+</header>
+<hr/>
+<section>
+
+<!-- Navigation bar -->
+<div>
+<table border="2" cellpadding="20" style="background-color: white">
+<navbar>
+<tr><td><a href="index.html">Home</a></td></tr>
+<tr><td><a href="bio.html">Bio</a></td></br></tr>
+<td><a href="contact.html">Contact</a></td>
+</navbar>
+</table>
+</div>
+
+<!-- Images-->
+<div id="div1" ondragover="permitdrop(event)" ondrop="drop(event)" style="margin-bottom: 100px; margin-right: 100px; background-color: white">
+
+<img class="myImages" src="dragonslayer.jpg" id="dragon" Alt="dragon" draggable="true" ondragstart="drag(event)"/>
+<img src="Vikings_DrinkingTea.png" id="Vikings" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking01.png" id="viking01" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking02.png" id="viking02" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking03.png" id="viking03" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking04.png" id="viking04" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking05.png" id="viking05" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking06.png" id="viking06" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking07.png" id="viking07" draggable="true" ondragstart="drag(event)"/>
+<img src="Viking08.png" id="viking08" draggable="true" ondragstart="drag(event)"/>
+</div>
+
+<!-- Drag and drop box -->
+<div id="div2" ondragover="permitdrop(event)" ondrop="drop(event)" style="width:50%; height:100%; background-color: white">
+<h4><b>Drag your favorite here!</h4></b>
+</div>
+</section>
+
+<footer>
+<h3>2019©</h3>
+</footer>
+
+</body>
+</html>
