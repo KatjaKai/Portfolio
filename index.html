@@ -8,46 +8,56 @@
 			<link rel="stylesheet" type="text/css" href="ColorStyles.css">
 			
 <script>
-<!-- Drag & drop -->
-function drop(event)
-{
-event.preventDefault();
-var data=event.dataTransfer.getData("text");
-event.target.appendChild(document.getElementById(data));
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
 }
-function permitdrop(event)
-{
-event.preventDefault();
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
 }
-function drag(event)
-{
-event.dataTransfer.setData("text", event.target.id);
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
-
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
 </script>
 
   </head>
   
  <body> 
- <style>
- body
- {
- background-image: url("bg_clouds.jpeg")
- }
- </style>
  <header>
 <!-- introduction-->
-<h1>Mockup Portfolio</h1>
-<h2>Katja Kaikkonen & Konsta Kantoluoto</h2>
+<h1>Portfolio</h1>
+<h2>Katja Kaikkonen</h2>
 
 
 </header>
 <hr/>
+
 <section>
 
 <!-- Navigation bar -->
 <div>
-<table border="2" cellpadding="20" style="background-color: white">
+<table border="2" cellpadding="20">
 <navbar>
 <tr><td><a href="index.html">Home</a></td></tr>
 <tr><td><a href="bio.html">Bio</a></td></br></tr>
@@ -57,28 +67,76 @@ event.dataTransfer.setData("text", event.target.id);
 </div>
 
 <!-- Images-->
-<div id="div1" ondragover="permitdrop(event)" ondrop="drop(event)" style="margin-bottom: 100px; margin-right: 100px; background-color: white">
-
-<img class="myImages" src="dragonslayer.jpg" id="dragon" Alt="dragon" draggable="true" ondragstart="drag(event)"/>
-<img src="Vikings_DrinkingTea.png" id="Vikings" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking01.png" id="viking01" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking02.png" id="viking02" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking03.png" id="viking03" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking04.png" id="viking04" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking05.png" id="viking05" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking06.png" id="viking06" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking07.png" id="viking07" draggable="true" ondragstart="drag(event)"/>
-<img src="Viking08.png" id="viking08" draggable="true" ondragstart="drag(event)"/>
+<div class="row">
+  <div class="column">
+    <img src="angel_fight.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="red_desert.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="swamp_dragon.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="winged_death.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="red_fox.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="winter_morning.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="ice_cave.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
 </div>
 
-<!-- Drag and drop box -->
-<div id="div2" ondragover="permitdrop(event)" ondrop="drop(event)" style="width:50%; height:100%; background-color: white">
-<h4><b>Drag your favorite here!</h4></b>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <div class="mySlides">
+      <div class="numbertext">1 / 7</div>
+      <img src="angel_fight.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">2 / 7</div>
+      <img src="red_desert.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">3 / 7</div>
+      <img src="swamp_dragon.jpg" style="width:100%">
+    </div>
+    <div class="mySlides">
+      <div class="numbertext">4 / 7</div>
+      <img src="winged_death.jpg" style="width:100%">
+    </div>
+	    <div class="mySlides">
+      <div class="numbertext">5 / 7</div>
+      <img src="red_fox.jpg" style="width:100%">
+    </div>
+	    <div class="mySlides">
+      <div class="numbertext">6 / 7</div>
+      <img src="winter_morning.jpg" style="width:100%">
+    </div>
+	    <div class="mySlides">
+      <div class="numbertext">7 / 7</div>
+      <img src="ice_cave.jpg" style="width:100%">
+    </div>
+	
+	
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+	
+  </div>
 </div>
+
 </section>
 
 <footer>
-<h3>2019©</h3>
+<h3>Katja Kaikkonen 2019©</h3>
 </footer>
 
 </body>
