@@ -221,6 +221,16 @@ color: white;
 bottom: 0;
 width: 100%;
 }
+footer2
+{
+background-color: #666;
+padding: 2px;
+text-align: center;
+color: white;
+bottom: 0;
+width: 100%;
+position: fixed;
+}
 @media (max-width: 600px)
 {
 	.modal-content

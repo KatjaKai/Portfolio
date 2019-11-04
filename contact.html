@@ -12,12 +12,6 @@
   </head>
   
 <body> 
-  <style>
- body
- {
- background-image: url("bg_clouds.jpeg")
- }
- </style>
 
  <header>
 <!-- introduction-->
@@ -48,16 +42,37 @@
 </div>
 
 <article>
-<p> contact me </p>
+<h2> Contact me </h2>
+<form method="post" action="send_mail.php">
+<p>
+<label>First name
+<br>
+<input type="text" name="first_name" required>
+</label>
+</p>
+
+<p>
+<label>Email
+<br>
+<input type="email" name="email_address">
+</label>
+</p>
+
+<p>
+<label>Comments
+<br>
+<textarea name="comments" maxlength="500">
+</textarea>
+</label>
+</p>
+Submit button temporarily disabled due nonexistent php support.
+</form>
+
 </article>
 
-
-<div style="margin-left: 400px">
-<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=27.62417793273926%2C64.1998032882508%2C27.76751518249512%2C64.23392604563158&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=14/64.2169/27.6958">View Larger Map</a></small>
-</div>
 </section>
 
-<footer>
+<footer2>
 <h3>Katja Kaikkonen 2019©</h3>
 </footer>
 
